@@ -1,7 +1,7 @@
 class PrototypesController < ApplicationController
 
   def index
-    @prototypes = prototype.all
+    #@prototypes = prototype.all
   end
 
   def new
