@@ -3,9 +3,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    validates :user_name
+    validates :name
     validates :profile
-    validates :affiliation
-    validates :post
+    validates :occupation
+    validates :position
   end
 end

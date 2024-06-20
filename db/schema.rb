@@ -12,10 +12,10 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_06_19_103702) do
   create_table "users", charset: "utf8", force: :cascade do |t|
-    t.string "user_name", null: false
+    t.string "name", null: false
     t.text "profile", null: false
-    t.text "affiliation", null: false
-    t.text "post", null: false
+    t.text "occupation", null: false
+    t.text "position", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
