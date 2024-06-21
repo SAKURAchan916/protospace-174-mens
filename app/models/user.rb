@@ -8,4 +8,6 @@ class User < ApplicationRecord
     validates :occupation
     validates :position
   end
+
+  has_many :prototypes
 end
