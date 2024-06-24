@@ -1,6 +1,6 @@
 class PrototypesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_prototype, only: [:show, :edit, :update]
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
   before_action :move_to_top, only: [:edit, :update]
 
   def index
@@ -32,6 +32,14 @@ class PrototypesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    # ログインユーザーとプロトタイプ登録者が別人の場合は以降の処理を実施しない
+    return if current_user.id != @prototype.user_id
+
+    @prototype.destroy
+    redirect_to root_path
   end
 
   private
