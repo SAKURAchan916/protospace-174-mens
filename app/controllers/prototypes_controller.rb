@@ -4,7 +4,7 @@ class PrototypesController < ApplicationController
   before_action :move_to_top, only: [:edit, :update]
 
   def index
-    #@prototypes = prototype.all
+    @prototypes = Prototype.includes(:user)
   end
 
   def new
